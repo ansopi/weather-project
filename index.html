@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/b068bcb823.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Weather by Sofia 🌡</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <form id="form-city">
+        <input type="text" placeholder="Change city" class="search_city" id ="search-city"/>
+        <input type="submit" value="🔍" class="button_search" />
+        <input type="button" value="Current Location" class="button_currentLocation" id = "button-currentLocation" />
+
+      </form>
+
+      <section class="today">
+        <h1 id ="introDate">
+          Hello! This is the weather for today, 18th May 2022.
+        </h1>
+        <div id="dayWeek-hours"> 
+        </div>
+
+        <div class="weather_today" id="weather-today">
+          <img src="images/suns.png" class="icon_today" /><br />
+          <div class="city" id="city">  </div> 
+          <span class="temperature_today" id="temperature-today">  </span> <span class ="celsius" id ="celsius">C</span> | <span class ="fahrenheit" id ="fahrenheit">F</span> <br />
+          <span class="weather_description_today" id="weather-description-today">  </span> <br />
+          Humidity: <span class="humidity_today" id="humidity-today"></span> <br />
+          Wind: <span class="wind_today" id="wind-today"></span> <br />
+        </div>
+      </section>
+
+      <hr />
+
+      <div class="nextdays">
+        <h1>What's next?</h1>
+
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5>Tomorrow</h5>
+                <p class="info_day">
+                  <img src="images/rains.png" class="icon day1" /><br />
+                  <span class="temperature day1"> 21ºC/ 17ºC </span> <br />
+                  Precipitation: <span class="precipitation day1">21%</span>
+                  <br />
+                  Humidity: <span class="humidity day1">70% </span> <br />
+                  Wind: <span class="wind day1">8 km/h</span> <br />
+                  UV Index: <span class="uv day1">1 of 10</span> <br />
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-2 day_2">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5>Friday</h5>
+                <p class="info_day">
+                  <img src="images/winds.png" class="icon day2" /><br />
+                  <span class="temperature day2"> 19ºC/ 16ºC </span> <br />
+                  Precipitation: <span class="precipitation day2">0%</span>
+                  <br />
+                  Humidity: <span class="humidity day2">80% </span> <br />
+                  Wind: <span class="wind day2">20 km/h</span> <br />
+                  UV Index: <span class="uv day2">2 of 10</span> <br />
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5>Saturday</h5>
+                <p class="info_day">
+                  <img src="images/suns.png" class="icon day3" /><br />
+                  <span class="temperature day3"> 19ºC/ 16ºC </span> <br />
+                  Precipitation: <span class="precipitation day3">1%</span>
+                  <br />
+                  Humidity: <span class="humidity day3">88% </span> <br />
+                  Wind: <span class="wind day3">4 km/h</span> <br />
+                  UV Index: <span class="uv day3">6 of 10</span> <br />
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5>Sunday</h5>
+                <p class="info_day">
+                  <img src="images/sun&clounds.png" class="icon day4" /><br />
+                  <span class="temperature day4"> 19ºC/ 16ºC </span> <br />
+                  Precipitation: <span class="precipitation day4">0%</span>
+                  <br />
+                  Humidity: <span class="humidity day4">85% </span> <br />
+                  Wind: <span class="wind day4">0 km/h</span> <br />
+                  UV Index: <span class="uv day4">8 of 10</span> <br />
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5>Monday</h5>
+                <p class="info_day">
+                  <img src="images/suns.png" class="icon day5" /><br />
+                  <span class="temperature day5"> 22ºC/ 19ºC </span> <br />
+                  Precipitation: <span class="precipitation day5">5%</span>
+                  <br />
+                  Humidity: <span class="humidity day5">75% </span> <br />
+                  Wind: <span class="wind day5">2 km/h</span> <br />
+                  UV Index: <span class="uv day5">5 of 10</span> <br />
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5>Tuesday</h5>
+                <p class="info_day">
+                  <img src="images/thunders.png" class="icon day6" /><br />
+                  <span class="temperature day6"> 16ºC/ 14ºC </span> <br />
+                  Precipitation: <span class="precipitation day6">90%</span>
+                  <br />
+                  Humidity: <span class="humidity day6">88% </span> <br />
+                  Wind: <span class="wind day6">7 km/h</span> <br />
+                  UV Index: <span class="uv day6">1 of 10</span> <br />
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="src/script.js"></script>
+
+</html>

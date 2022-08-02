@@ -1,0 +1,133 @@
+body {
+  background: #fffffa;
+  color: #171f20;
+  font-family: "Open Sans", sans-serif;
+}
+
+form {
+  margin: 20px 0;
+}
+
+.search_city {
+  border: 1px solid #b1c0a5;
+  border-radius: 5px;
+  padding-left: 10px;
+  width: 85%;
+}
+
+.button_search {
+  background-color: #ffefb6;
+  border: 1px solid #b1c0a5;
+  border-radius: 5px;
+}
+
+.button_currentLocation {
+  background-color: #ffefb6;
+  border: 1px solid #b1c0a5;
+  border-radius: 5px;
+}
+
+h1 {
+  color: #2e4349;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: bold;
+  padding: 15px 10px 10px;
+}
+
+.today {
+  background-color: #9dcccc;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 18px;
+  margin: 10px 0px;
+  padding: 40px 50px;
+  text-align: center;
+}
+
+.weather_today {
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.icon_today {
+  margin: 10px;
+  width: 70px;
+}
+
+.city {
+  font-size: 35px;
+  margin: 20px;
+}
+
+.temperature_today {
+  font-size: 35px;
+}
+
+.celsius, .fahrenheit {
+  font-size: 20px;
+  font-weight: lighter;
+  color:dimgray;
+
+}
+.celsius:hover{
+  color:cadetblue;
+  text-decoration: underline;
+  cursor:pointer;
+}
+
+.fahrenheit:hover{
+  color:cadetblue;
+  text-decoration: underline;
+  cursor:pointer;
+}
+
+.precipitation_today,
+.humidity_today,
+.wind_today,
+.uv_today {
+  font-weight: lighter;
+}
+
+hr {
+  border: 2px solid #ffd347;
+}
+
+.nextdays {
+  margin-bottom: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.precipitation,
+.humidity,
+.wind,
+.uv {
+  font-weight: lighter;
+}
+
+.card-body {
+  background: #cedec1;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  width: 65%;
+}
+
+.card {
+  border: 1px solid transparent;
+}
+
+h5 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.icon {
+  margin: 10px;
+  width: 50px;
+}
+
+.info_day {
+  text-align: center;
+}
